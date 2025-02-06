@@ -41,10 +41,10 @@ The Cinema Reservation System is a web-based application that allows users to re
 
 ### Key Components
 
-- Multi-page website for managing different sections (Movies, Reservations, etc.)
 - User interface to view available movies and seat selection
 - Reservation logic to ensure no double booking
 - Confirmation of reservation after selecting seats
+- Options to pick between 1 - 20 seats
 
 ### Technology
 
