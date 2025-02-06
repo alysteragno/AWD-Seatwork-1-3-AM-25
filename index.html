@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cinema Reservation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=NTR&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets\css\style.css">
+<script src="assets\js\script.js"></script>
+</head>
+
+<body>
+
+    <div class="header">
+        <a href="#home" class="home">Home</a>
+    </div>
+
+    <div class="content">
+        <h1>Cinema Reservation System</h1>
+
+        <div class="movie">
+            <div class="movie-option">
+                <input type="radio" id="movie1" name="movie" value="Action Adventure">
+                <label for="movie1">Action Adventure</label><br>
+                <img src="assets\img\actionAdventure.jpg" alt="Action Adventure" class="movie-img">
+            </div>
+        
+            <div class="movie-option">
+                <input type="radio" id="movie2" name="movie" value="Romantic Comedy">
+                <label for="movie2">Romantic Comedy</label><br>
+                <img src="assets\img\romCom.jpg" alt="Romantic Comedy" class="movie-img">
+            </div>
+        
+            <div class="movie-option">
+                <input type="radio" id="movie3" name="movie" value="Horror">
+                <label for="movie3">Horror</label><br>
+                <img src="assets\img\horror.jpg" alt="Horror" class="movie-img">
+            </div>
+        
+            <div class="movie-option">
+                <input type="radio" id="movie4" name="movie" value="Science fiction">
+                <label for="movie4">Science fiction</label><br>
+                <img src="assets\img\sciFi.jpeg" alt="Science Fiction" class="movie-img">
+            </div>
+        </div>
+        
+
+            <div class="seats">
+                <label>Select Number of Seats (Max 20):</label><br>
+                <select id="seats">
+                    <option value="1">1 seat</option>
+                    <option value="2">2 seats</option>
+                    <option value="3">3 seats</option>
+                    <option value="4">4 seats</option>
+                    <option value="5">5 seats</option>
+                    <option value="6">6 seats</option>
+                    <option value="7">7 seats</option>
+                    <option value="8">8 seats</option>
+                    <option value="9">9 seats</option>
+                    <option value="10">10 seats</option>
+                    <option value="11">11 seats</option>
+                    <option value="12">12 seats</option>
+                    <option value="13">13 seats</option>
+                    <option value="14">14 seats</option>
+                    <option value="15">15 seats</option>
+                    <option value="16">16 seats</option>
+                    <option value="17">17 seats</option>
+                    <option value="18">18 seats</option>
+                    <option value="19">19 seats</option>
+                    <option value="20">20 seats</option>
+                </select><br>
+            </div>
+
+            <button class="btn" onclick="reserveSeats()">Reserve Seats</button>
+
+            <p id="availability" class="alert"></p>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>Designed by Marasigan, Alyster Agno</p>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,251 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.home {
+    padding: 5px;
+    list-style: none;
+    text-decoration: none;
+    border-radius: 10px;
+}
+
+body {
+    font-family: Roboto, sans-serif;
+    background-color: #f5f2f3;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    height: 100vh;
+    text-align: center;
+}
+ 
+.header {
+    background-color: #d28aa1;
+    color: rgb(255, 255, 255);
+    padding: 15px;
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: 10;
+}
+
+
+.header {
+    top: 0;
+}
+
+
+.footer {
+    bottom: 0;
+    font-size: 12px;
+    color: #777272;
+    padding-bottom: 2rem;
+}
+
+
+.footer p {
+    margin: 0;
+}
+
+
+.content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 60px;
+    margin-bottom: 80px;
+}
+
+
+h1 {
+    color: #8d5c6c;
+    font-size: 36px;
+    margin-bottom: 30px;
+    width: 100%;
+}
+
+
+.reservation-form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+
+.movie, .seats {
+    margin-bottom: 20px;
+}
+
+
+label {
+    font-weight: bold;
+    color: #d28aa1;
+    display: block;
+    margin-bottom: 5px;
+}
+
+
+input[type="radio"] {
+    display: none;
+}
+
+
+.movie label {
+    padding: 12px 20px;
+    background-color: #f9e1e6;
+    color: #6f3d45;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    margin: 5px;
+}
+
+
+input[type="radio"]:checked + label {
+    background-color: #d28aa1;
+    color: white;
+    transform: scale(1.05);
+}
+
+
+input[type="radio"]:focus + label {
+    outline: 2px solid #d28aa1;
+}
+
+
+select {
+    width: 100%;
+    padding: 12px;
+    border-radius: 4px;
+    border: 1px solid #f1b6c0;
+    background-color: #f9e1e6;
+    font-size: 14px;
+    color: #6f3d45;
+    margin-top: 5px;
+}
+
+
+select:focus {
+    outline: none;
+    border-color: #d28aa1;
+}
+
+
+.btn {
+    padding: 14px;
+    background-color: #d28aa1;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 13px;
+    transition: background-color 0.3s ease;
+}
+
+
+.btn:hover {
+    background-color: #e27f8f;
+}
+
+
+.alert {
+    color: red;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 15px;
+}
+
+
+.seats option {
+    background-color: #f1e3e8;
+    padding: 10px;
+    border: 1px solid #f1b6c0;
+}
+
+
+.seats option:hover {
+    background-color: #f1b6c0;
+}
+
+
+.header a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+
+.header a:hover {
+    text-decoration: underline;
+}
+
+
+.movie {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+
+.movie-option {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: px;
+}
+
+
+.movie-img {
+    width: 100%;
+    max-width: 180px;
+    height: auto;
+    border-radius: 8px;
+    margin-top: 10px;
+    transition: transform 0.3s ease;
+}
+
+
+.movie-img:hover {
+    transform: scale(1.05);
+}
+
+
+label {
+    font-weight: bold;
+    color: #d28aa1;
+    display: block;
+    margin-bottom: 5px;
+    cursor: pointer;
+    padding: 12px 20px;
+    background-color: #f9e1e6;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+
+input[type="radio"]:checked + label {
+    background-color: #d28aa1;
+    color: white;
+    transform: scale(1.05);
+}
