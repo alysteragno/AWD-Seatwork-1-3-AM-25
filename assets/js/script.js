@@ -15,13 +15,15 @@ function reserveSeats() {
     const selectedSeats = parseInt(document.getElementById('seats').value);
     const availabilityMessage = document.getElementById('availability');    
 
+    // Ensure a movie is selected
     if (!selectedMovie) {
         availabilityMessage.textContent = 'Please select a movie.';
         return;
     }
 
-    if (selectedSeats > 20) {
-        availabilityMessage.textContent = 'You can only reserve up to 20 seats.';
+    // Ensure selected seats is between 1 and 20
+    if (selectedSeats < 1 || selectedSeats > 20) {
+        availabilityMessage.textContent = 'Please select between 1 and 20 seats.';
         return;
     }
 
@@ -74,7 +76,7 @@ function reserveSeats() {
 // Function to reserve seats for a specific movie
 function reserveSeatsForMovie(reservedSeatsArray, numberOfSeats) {
     for (let i = 0; i < numberOfSeats; i++) {
-        reservedSeatsArray.push(i + 1); // Store seat numbers in the array (1-indexed)
+        reservedSeatsArray.push(reservedSeatsArray.length + 1); // Increment the seat number (starts from 1)
     }
 }
 
