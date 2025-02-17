@@ -5,10 +5,10 @@ let availableSeatsMovie3 = 20;  // Horror
 let availableSeatsMovie4 = 20;  // Science Fiction
 
 // Arrays to track reserved seats for each movie
-let reservedSeatsMovie1 = [];
-let reservedSeatsMovie2 = [];
-let reservedSeatsMovie3 = [];
-let reservedSeatsMovie4 = [];
+let reservedSeatsMovie1 = 0; // Number of reserved seats
+let reservedSeatsMovie2 = 0;
+let reservedSeatsMovie3 = 0;
+let reservedSeatsMovie4 = 0;
 
 function reserveSeats() {
     const selectedMovie = document.querySelector('input[name="movie"]:checked');
@@ -29,21 +29,21 @@ function reserveSeats() {
 
     const movie = selectedMovie.value;
     let availableSeats;
-    let reservedSeatsArray;
+    let reservedSeats;
 
     // Determine which movie's seat availability we're working with
     if (movie === "Action Adventure") {
         availableSeats = availableSeatsMovie1;
-        reservedSeatsArray = reservedSeatsMovie1;
+        reservedSeats = reservedSeatsMovie1;
     } else if (movie === "Romantic Comedy") {
         availableSeats = availableSeatsMovie2;
-        reservedSeatsArray = reservedSeatsMovie2;
+        reservedSeats = reservedSeatsMovie2;
     } else if (movie === "Horror") {
         availableSeats = availableSeatsMovie3;
-        reservedSeatsArray = reservedSeatsMovie3;
+        reservedSeats = reservedSeatsMovie3;
     } else if (movie === "Science fiction") {
         availableSeats = availableSeatsMovie4;
-        reservedSeatsArray = reservedSeatsMovie4;
+        reservedSeats = reservedSeatsMovie4;
     }
 
     // Ensure no more than available seats can be reserved
@@ -53,31 +53,27 @@ function reserveSeats() {
     }
 
     // Proceed with reserving seats and update the available seats
-    availabilityMessage.textContent = `Reservation successful! You have reserved ${selectedSeats} seat(s) for "${movie}".`;
+    reservedSeats += selectedSeats; // Increment the reserved seats count
 
-    // Reserve seats and update available seats
-    reserveSeatsForMovie(reservedSeatsArray, selectedSeats);
+    availabilityMessage.textContent = `Reservation successful! You have reserved ${reservedSeats} seat(s) for "${movie}".`;
 
     // Update the available seats for the specific movie
     if (movie === "Action Adventure") {
         availableSeatsMovie1 -= selectedSeats;
+        reservedSeatsMovie1 = reservedSeats;
     } else if (movie === "Romantic Comedy") {
         availableSeatsMovie2 -= selectedSeats;
+        reservedSeatsMovie2 = reservedSeats;
     } else if (movie === "Horror") {
         availableSeatsMovie3 -= selectedSeats;
+        reservedSeatsMovie3 = reservedSeats;
     } else if (movie === "Science fiction") {
-        availableSeatsMovie4 -= selectedSeats; // Ensure Sci-Fi is correctly handled
+        availableSeatsMovie4 -= selectedSeats;
+        reservedSeatsMovie4 = reservedSeats;
     }
 
     // Update the seat reservation status visually
     updateReservedSeatsBackground();
-}
-
-// Function to reserve seats for a specific movie
-function reserveSeatsForMovie(reservedSeatsArray, numberOfSeats) {
-    for (let i = 0; i < numberOfSeats; i++) {
-        reservedSeatsArray.push(reservedSeatsArray.length + 1); // Increment the seat number (starts from 1)
-    }
 }
 
 // Function to update the background color of reserved seats
@@ -88,10 +84,10 @@ function updateReservedSeatsBackground() {
 
         // Check if this seat is reserved for any movie
         if (
-            reservedSeatsMovie1.includes(seatId) ||
-            reservedSeatsMovie2.includes(seatId) ||
-            reservedSeatsMovie3.includes(seatId) ||
-            reservedSeatsMovie4.includes(seatId)  // Ensure this checks for Sci-Fi reservations
+            reservedSeatsMovie1 >= seatId ||
+            reservedSeatsMovie2 >= seatId ||
+            reservedSeatsMovie3 >= seatId ||
+            reservedSeatsMovie4 >= seatId
         ) {
             seat.classList.add('reserved'); // Add reserved class if seat is reserved
         } else {
